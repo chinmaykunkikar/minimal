@@ -1,0 +1,16 @@
+[
+    { 
+ 	"remote": "gh",
+	"repository": "XperiaSTE/android_kernel_sony_u8500",
+	"target_path": "kernel/sony/u8500",
+	"revision": "cm-12.1"
+    }
+
+
+    {
+	"remote": "gh",
+	"repository": "XperiaSTE/android_vendor_sony",
+	"target_path": "vendor/sony",
+	"revision": "cm-12.1"
+	}
+]

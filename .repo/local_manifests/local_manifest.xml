@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="ste" 
+  	      fetch="https://github.com/XperiaSTE" />
+
+  <remote name="kernel"
+          fetch="git://git.kernel.org/pub/scm/" />
+
+  <remote name="googlecode"
+          fetch="https://code.google.com/p/" />
+
+  <remove-project name="platform_bootable_recovery" />
+  <remove-project name="android_external_bluetooth_bluedroid" />
+  <remove-project name="android_packages_apps_Bluetooth" />
+  <remove-project name="android_hardware_libhardware" />
+  <remove-project name="android_hardware_libhardware_legacy" />
+
+  <project path="bootable/recovery" name="android_bootable_recovery" remote="ste" revision="cm-12.1" />
+  <project path="device/sony/pepper" name="android_device_sony_pepper" remote="ste" revision="cm-12.1" />
+  <project path="device/sony/montblanc-common" name="android_device_sony_montblanc-common" remote="ste" revision="cm-12.1" />
+  <project path="external/bluetooth/bluez" name="android_external_bluetooth_bluez" remote="ste" revision="5.30" />
+  <project path="external/bluetooth/glib" name="aosp-bluez.glib" remote="googlecode" revision="master" groups="pdk" />
+  <project path="external/bluetooth/sbc" name="bluetooth/sbc" remote="kernel"     revision="master" groups="pdk" />
+  <project path="hardware/libhardware" name="android_hardware_libhardware" remote="ste" revision="cm-12.1" />
+  <project path="hardware/libhardware_legacy" name="android_hardware_libhardware_legacy" remote="ste" revision="cm-12.1" />
+  <project path="hardware/ste-sony" name="android_hardware_ste-sony" remote="ste" revision="cm-12.1" />
+  <project path="kernel/sony/u8500" name="android_kernel_sony_u8500" remote="ste" revision="cm-12.1" />
+  <project path="packages/apps/Bluetooth" name="android_packages_apps_Bluetooth" remote="ste" revision="cm-12.1" />
+  <project path="vendor/sony" name="android_vendor_sony" remote="ste" revision="cm-12.1" />
+</manifest>
