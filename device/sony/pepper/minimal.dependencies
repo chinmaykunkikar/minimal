@@ -4,7 +4,7 @@
 	"repository": "XperiaSTE/android_kernel_sony_u8500",
 	"target_path": "kernel/sony/u8500",
 	"revision": "cm-12.1"
-    }
+    },
 
 
     {
