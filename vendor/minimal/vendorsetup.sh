@@ -28,6 +28,7 @@ add_lunch_combo minimal_mako-userdebug
 add_lunch_combo minimal_mb886-userdebug
 add_lunch_combo minimal_n7000-userdebug
 add_lunch_combo minimal_n7100-userdebug
+add_lunch_combo minimal_pepper-userdebug
 add_lunch_combo minimal_r950-userdebug
 add_lunch_combo minimal_shamu-userdebug
 add_lunch_combo minimal_t0lte-userdebug
