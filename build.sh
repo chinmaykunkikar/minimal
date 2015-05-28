@@ -11,4 +11,4 @@ lunch minimal_pepper-userdebug
 export USE_PREBUILT_CHROMIUM=1
 make clean && make clobber
 #export CHANGELOG=true
-make
+make -j8
