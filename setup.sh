@@ -19,6 +19,8 @@ fi
 
 #Copy files to respective directories 
 
+cp "build.sh" "$MINIMAL";
+
 cd $DPEPPER;
 cp "minimal.dependencies" "$MINIMAL/device/sony/pepper/";
 rm "$MINIMAL/device/sony/pepper/vendorsetup.sh" && cp "vendorsetup.sh" "$MINIMAL/device/sony/pepper/";
