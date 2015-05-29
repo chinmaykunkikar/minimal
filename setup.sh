@@ -21,6 +21,7 @@ fi
 
 cp "clean.sh" "$MINIMAL";
 cp "compile.sh" "$MINIMAL";
+cp "crsc.sh" "$MINIMAL";
 cp "reset.sh" "$MINIMAL";
 
 cd $DPEPPER;
