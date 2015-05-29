@@ -22,6 +22,9 @@ fi
 cd $DPEPPER;
 cp "minimal.dependencies" "$MINIMAL/device/sony/pepper/";
 rm "$MINIMAL/device/sony/pepper/vendorsetup.sh" && cp "vendorsetup.sh" "$MINIMAL/device/sony/pepper/";
+if [ -f "$MINIMAL/device/sony/pepper/cm.mk" ]; then
+rm "$MINIMAL/device/sony/pepper/cm.mk"
+fi
 
 cd $LMANIFESTS;
 rm "$MINIMAL/.repo/local_manifests/local_manifest.xml" && cp "local_manifest.xml" "$MINIMAL/.repo/local_manifests/";
