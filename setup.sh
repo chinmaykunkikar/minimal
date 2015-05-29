@@ -23,7 +23,6 @@ cp "clean.sh" "$MINIMAL";
 cp "compile.sh" "$MINIMAL";
 cp "crsc.sh" "$MINIMAL";
 cp "reset.sh" "$MINIMAL";
-cp "setup.sh" "$MINIMAL";
 
 cd $DPEPPER;
 cp "minimal.dependencies" "$MINIMAL/device/sony/pepper/";
