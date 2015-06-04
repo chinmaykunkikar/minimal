@@ -19,9 +19,9 @@ fi
 
 #Copy files to respective directories 
 
-cp "clean.sh" "$MINIMAL";
-cp "compile.sh" "$MINIMAL";
-cp "reset.sh" "$MINIMAL";
+cp "clean" "$MINIMAL";
+cp "compile" "$MINIMAL";
+cp "reset" "$MINIMAL";
 
 cd $DPEPPER;
 cp "minimal.dependencies" "$MINIMAL/device/sony/pepper/";
