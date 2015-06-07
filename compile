@@ -1,8 +1,12 @@
 #!/bin/bash
+
 # ccache
+CCACHEDIR=~/ccache/minos;
+mkdir $CCACHEDIR;
 export USE_CCACHE=1;
 export CCACHE_NLEVELS=4;
-export CCACHE_DIR=/home/darkfalcon/ccache/minos;
+export CCACHE_DIR=$CCACHEDIR;
+
 # Build
 . build/envsetup.sh;
 export KBUILD_BUILD_USER=darkfalcon;
