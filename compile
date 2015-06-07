@@ -2,7 +2,7 @@
 
 # ccache
 CCACHEDIR=~/ccache/minos;
-mkdir $CCACHEDIR;
+mkdir -p $CCACHEDIR;
 export USE_CCACHE=1;
 export CCACHE_NLEVELS=4;
 export CCACHE_DIR=$CCACHEDIR;
