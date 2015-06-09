@@ -9,6 +9,9 @@
 
   <remote name="googlecode"
           fetch="https://code.google.com/p/" />
+          
+  <remote name="gha" 
+  	      fetch="https://github.com/Agontuk" />          
 
   <remove-project name="platform_bootable_recovery" />
   <remove-project name="android_external_bluetooth_bluedroid" />
@@ -26,6 +29,7 @@
   <project path="hardware/libhardware_legacy" name="android_hardware_libhardware_legacy" remote="ste" revision="cm-12.1" />
   <project path="hardware/ste-sony" name="android_hardware_ste-sony" remote="ste" revision="cm-12.1" />
   <project path="packages/apps/Bluetooth" name="android_packages_apps_Bluetooth" remote="ste" revision="cm-12.1" />
+  <project path="patches" name="ste_patches" remote="gha" revision="cm-12.1" />
   <!--project path="kernel/sony/u8500" name="android_kernel_sony_u8500" remote="ste" revision="cm-12.1" /-->
   <!--project path="vendor/sony" name="android_vendor_sony" remote="ste" revision="cm-12.1" /-->
 </manifest>
