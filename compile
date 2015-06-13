@@ -14,4 +14,4 @@ export KBUILD_BUILD_HOST=omen;
 lunch minimal_pepper-userdebug;
 export USE_PREBUILT_CHROMIUM=1;
 make clean && make clobber;
-make -j8 otapackage;
+mka bacon -j8;
