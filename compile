@@ -13,5 +13,6 @@ export KBUILD_BUILD_USER=darkfalcon;
 export KBUILD_BUILD_HOST=omen;
 lunch minimal_pepper-userdebug;
 export USE_PREBUILT_CHROMIUM=1;
+export CHANGELOG=true
 make clean && make clobber;
 mka bacon -j8;
