@@ -4,7 +4,7 @@
 
 MINIMAL="/home/darkfalcon/minimal";
 DPEPPER="$PWD/device/sony/pepper";
-LMANIFESTS="$PWD/.repo/local_manifests"
+LMANIFESTS="$PWD/.repo/local_manifests";
 VMINIMAL="$PWD/vendor/minimal";
 VPRODUCT="$VMINIMAL/products";
 
@@ -14,7 +14,7 @@ if [ ! -d "$MINIMAL" ]; then
   echo "No valid working directory found. Exiting...";
   exit;
 else
-  echo "Found woking directory!"
+  echo "Found woking directory!";
 fi
 
 #Copy files to respective directories 
@@ -28,9 +28,9 @@ cp "minimal.dependencies" "$MINIMAL/device/sony/pepper/";
 rm "$MINIMAL/device/sony/pepper/vendorsetup.sh" && cp "vendorsetup.sh" "$MINIMAL/device/sony/pepper/";
 echo "'minimal.dependencies' & 'vendorsetup.sh' copied to path '/device/sony/pepper'";
 if [ -f "$MINIMAL/device/sony/pepper/cm.mk" ]; then
-rm "$MINIMAL/device/sony/pepper/cm.mk"
+rm "$MINIMAL/device/sony/pepper/cm.mk";
 else
-echo "No cm.mk found, skipping"
+echo "No cm.mk found, skipping";
 fi
 
 cd $LMANIFESTS;
@@ -46,6 +46,6 @@ rm "$MINIMAL/vendor/minimal/products/AndroidProducts.mk" && cp "AndroidProducts.
 cp "minimal_pepper.mk" "$MINIMAL/vendor/minimal/products/";
 echo "'AndroidProducts.mk' & 'minimal_pepper.mk' copied to path '/vendor/minimal/products/'";
 
-echo "Done!"
+echo "Done!";
 
 exit
