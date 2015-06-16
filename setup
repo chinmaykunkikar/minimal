@@ -20,6 +20,7 @@ fi
 cp "clean" "$MINIMAL";
 cp "compile" "$MINIMAL";
 cp "reset" "$MINIMAL";
+cp "remotepull" "$MINIMAL";
 
 cd $LMANIFESTS;
 rm "$MINIMAL/.repo/local_manifests/local_manifest.xml" && cp "local_manifest.xml" "$MINIMAL/.repo/local_manifests/";

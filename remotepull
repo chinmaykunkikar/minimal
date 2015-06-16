@@ -1,0 +1,112 @@
+#!bin/bash
+
+# After adding personal paths to the project, it is difficult
+# to change to every directory and sync the upstream commits.
+# In order to reduce the manual work, I'm writing this script
+# which probably will be useful everytime.
+# I had a lot of free time, so making it colorful will
+# obviously make it look nice in the shell
+# This script in not the most perfect script as it is 'hardcoded'
+# for most of the part and it needs to be more universal.
+# Anyone can use modify and use this for personal use only
+
+# Define everything here
+MINIMAL="/home/darkfalcon/minimal";
+FRAMEWORKS="$MINIMAL/frameworks";
+AV="$FRAMEWORKS/av";
+BASE="$FRAMEWORKS/base";
+BIONIC="$MINIMAL/bionic";
+BUILD="$MINIMAL/build";
+EXTERNALICU="$MINIMAL/external/icu";
+NATIVE="$FRAMEWORKS/native";
+SYSTEMCORE="$MINIMAL/system/core";
+
+BRed='\e[1;31m';
+BGre='\e[1;32m';
+BYel='\e[1;33m';
+BBlu='\e[1;34m';
+BPur='\e[1;35m';
+BCya='\e[1;36m';
+RCol='\e[0m';
+
+# Quick check if the source directory exists. As defined above,
+# my source directory is '~/minimal'
+clear;
+
+if [ ! -d "$MINIMAL" ]; then
+  echo -e "${BRed}No valid working directory found.\n\nExiting${RCol}\n";
+  sleep 1;
+  exit;
+else
+  echo -e "${BGre}Found source directory!\n${RCol}"; sleep 1;
+fi
+
+# Introduction
+echo -e "${BPur}Hello, lets start syncing upstream!\n${RCol}";
+
+array=( "$BIONIC" "$BUILD" "$EXTERNALICU" "$AV" "$BASE" "$NATIVE" "$SYSTEMCORE")
+for i in ${array[@]}
+do
+    echo $i
+done
+
+echo -e "${BYel}\nNumber of repository directories ready for syncing:${RCol}" ${#array[@]}
+while true; do
+    echo "";
+    read -p "Start syncing now? [Y/N]: " yn;
+    echo "";
+    case $yn in
+        [Yy]* ) echo "" && break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.${RCol}";;
+    esac
+done
+
+clear && sleep 1;
+
+# Strat the actual sync
+echo -e "${BBlu} \nCurrent directory - $BIONIC ${RCol}";
+cd $BIONIC;
+echo -e "${BGre}Remotes -${RCol}";
+git remote -v;
+git pull th HEAD:lp-mr1;
+
+echo -e "${BBlu} \nCurrent directory - $BUILD ${RCol}";
+cd $BUILD;
+echo -e "${BGre}Remotes -${RCol}";
+git remote -v;
+git pull mo HEAD:lp-mr1;
+
+echo -e "${BBlu} \nCurrent directory - $EXTERNALICU ${RCol}";
+cd $EXTERNALICU;
+echo -e "${BGre}Remotes -${RCol}";
+git remote -v;
+git pull cm HEAD:cm-12.1;
+
+echo -e "${BBlu} \nCurrent directory - $AV ${RCol}";
+cd $AV;
+echo -e "${BGre}Remotes -${RCol}";
+git remote -v;
+git pull th HEAD:lp-mr1;
+
+echo -e "${BBlu} \nCurrent directory - $BASE ${RCol}";
+cd $BASE;
+echo -e "${BGre}Remotes -${RCol}";
+git remote -v;
+git pull mo HEAD:lp-mr1;
+
+echo -e "${BBlu} \nCurrent directory - $NATIVE ${RCol}";
+cd $NATIVE;
+echo -e "${BGre}Remotes -${RCol}";
+git remote -v;
+git pull th HEAD:lp-mr1;
+
+echo -e "${BBlu} \nCurrent directory - $SYSTEMCORE ${RCol}";
+cd $SYSTEMCORE;
+echo -e "${BGre}Remotes -${RCol}";
+git remote -v;
+git pull th HEAD:lp-mr1;
+
+echo -e "\n${BPur}Probably done!${RCol}\n";
+
+exit
