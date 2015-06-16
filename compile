@@ -11,7 +11,15 @@ export CCACHE_DIR=$CCACHEDIR;
 . build/envsetup.sh;
 export KBUILD_BUILD_USER=darkfalcon;
 export KBUILD_BUILD_HOST=omen;
-lunch minimal_pepper-userdebug;
+echo -e "\n\nLunch menu -\n\n1. user\n2. userdebug\n3. eng"; 
+read opt;
+    echo "";
+    case $opt in
+        1 ) lunch minimal_pepper-user;;
+        2 ) lunch minimal_pepper-userdebug;;
+        3 ) lunch minimal_pepper-eng;;
+        * ) echo "Please pick only one of these three lunch combos!" && exit;;
+    esac
 export USE_PREBUILT_CHROMIUM=1;
 export CHANGELOG=true
 make clean && make clobber;
