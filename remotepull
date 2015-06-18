@@ -52,7 +52,7 @@ done
 
 echo -e "${BYel}\nNumber of repository directories ready for syncing:${RCol}" ${#array[@]}
 
-sleep 2 && clear;
+sleep 2;
 
 # Strat the actual sync
 echo -e "${BBlu} \nCurrent directory - $BIONIC ${RCol}";
