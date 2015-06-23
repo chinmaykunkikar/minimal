@@ -2,19 +2,19 @@
 <manifest>
 
   <remote name="df" 
-		fetch="https://github.com/dark-falcon/" />
+  	      fetch="https://github.com/dark-falcon/" />
 
   <remote name="gh" 
-		fetch="https://github.com/" />
+  	      fetch="https://github.com/" />
 
   <remote name="googlecode"
-		fetch="https://code.google.com/p/" />
+          fetch="https://code.google.com/p/" />
 
   <remote name="kernel"
-		fetch="git://git.kernel.org/pub/scm/" />
+          fetch="git://git.kernel.org/pub/scm/" />
 
   <remote name="ste" 
-		fetch="https://github.com/XperiaSTE/" />
+  	      fetch="https://github.com/XperiaSTE/" />
 
   <remove-project name="android_bionic" />
   <remove-project name="platform_bootable_recovery" />
@@ -35,7 +35,18 @@
   <remove-project name="platform/prebuilts/clang/darwin-x86/host/3.5" />
   <remove-project name="platform/prebuilts/clang/darwin-x86/mips/3.3" />
   <remove-project name="platform/prebuilts/clang/darwin-x86/x86/3.3" />
-
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.8" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.8" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/host/headers" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.8" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.8" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.8" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
+  <remove-project name="platform/prebuilts/python/darwin-x86/2.7.5" />
 
   <project path="build" name="android_build" remote="df" revision="lp-mr1">
     <copyfile src="core/root.mk" dest="Makefile" />
