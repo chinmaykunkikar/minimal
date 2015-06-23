@@ -2,19 +2,19 @@
 <manifest>
 
   <remote name="df" 
-  	      fetch="https://github.com/dark-falcon/" />
+		fetch="https://github.com/dark-falcon/" />
 
   <remote name="gh" 
-  	      fetch="https://github.com/" />
+		fetch="https://github.com/" />
 
   <remote name="googlecode"
-          fetch="https://code.google.com/p/" />
+		fetch="https://code.google.com/p/" />
 
   <remote name="kernel"
-          fetch="git://git.kernel.org/pub/scm/" />
+		fetch="git://git.kernel.org/pub/scm/" />
 
   <remote name="ste" 
-  	      fetch="https://github.com/XperiaSTE/" />
+		fetch="https://github.com/XperiaSTE/" />
 
   <remove-project name="android_bionic" />
   <remove-project name="platform_bootable_recovery" />
