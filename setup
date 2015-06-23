@@ -26,11 +26,6 @@ cd $LMANIFESTS;
 rm "$MINIMAL/.repo/local_manifests/local_manifest.xml" && cp "local_manifest.xml" "$MINIMAL/.repo/local_manifests/";
 echo "'local_manifest.xml' copied to path '/.repo/local_manifests/'";
 
-cd $VPRODUCT;
-rm "$MINIMAL/vendor/minimal/products/AndroidProducts.mk" && cp "AndroidProducts.mk" "$MINIMAL/vendor/minimal/products/";
-cp "minimal_pepper.mk" "$MINIMAL/vendor/minimal/products/";
-echo "'AndroidProducts.mk' & 'minimal_pepper.mk' copied to path '/vendor/minimal/products/'";
-
 echo "Done!";
 
 exit
