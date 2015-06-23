@@ -31,7 +31,6 @@ RCol='\e[0m';
 
 # Quick check if the source directory exists. As defined above,
 # my source directory is '~/minimal'
-clear;
 
 if [ ! -d "$MINIMAL" ]; then
   echo -e "${BRed}No valid working directory found.\n\nExiting${RCol}\n";
@@ -52,7 +51,7 @@ done
 
 echo -e "${BYel}\nNumber of repository directories ready for syncing:${RCol}" ${#array[@]}
 
-sleep 2 && clear;
+sleep 2;
 
 # Strat the actual sync
 echo -e "${BBlu} \nCurrent directory - $BIONIC ${RCol}";
@@ -83,6 +82,6 @@ echo -e "${BBlu} \nCurrent directory - $SYSTEMCORE ${RCol}";
 cd $SYSTEMCORE;
 git pull th HEAD:lp-mr1;
 
-echo -e "\n${BPur}Probably done!${RCol}\n";
+echo -e "\n${BPur}Done!${RCol}\n";
 
 exit
