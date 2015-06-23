@@ -2,19 +2,19 @@
 <manifest>
 
   <remote name="df" 
-  	      fetch="https://github.com/dark-falcon/" />
+		fetch="https://github.com/dark-falcon/" />
 
   <remote name="gh" 
-  	      fetch="https://github.com/" />
+		fetch="https://github.com/" />
 
   <remote name="googlecode"
-          fetch="https://code.google.com/p/" />
+		fetch="https://code.google.com/p/" />
 
   <remote name="kernel"
-          fetch="git://git.kernel.org/pub/scm/" />
+		fetch="git://git.kernel.org/pub/scm/" />
 
   <remote name="ste" 
-  	      fetch="https://github.com/XperiaSTE/" />
+		fetch="https://github.com/XperiaSTE/" />
 
   <remove-project name="android_bionic" />
   <remove-project name="platform_bootable_recovery" />
@@ -53,7 +53,6 @@
   </project>
   <project path="bionic" name="android_bionic" remote="df" revision="lp-mr1" />
   <project path="bootable/recovery" name="android_bootable_recovery" remote="ste" revision="cm-12.1" />
-  <project path="device/sony/montblanc-common" name="android_device_sony_montblanc-common" remote="ste" revision="cm-12.1" />
   <project path="device/sony/pepper" name="android_device_sony_pepper" remote="df" revision="cm-12.1" />
   <project path="external/bluetooth/bluez" name="android_external_bluetooth_bluez" remote="ste" revision="5.30" />
   <project path="external/bluetooth/glib" name="aosp-bluez.glib" remote="googlecode" revision="master" groups="pdk" />
