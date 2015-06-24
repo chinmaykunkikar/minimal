@@ -54,6 +54,7 @@
   <project path="bionic" name="android_bionic" remote="df" revision="lp-mr1" />
   <project path="bootable/recovery" name="android_bootable_recovery" remote="ste" revision="cm-12.1" />
   <project path="device/sony/pepper" name="android_device_sony_pepper" remote="df" revision="cm-12.1" />
+  <project path="device/sony/montblanc-common" name="XperiaSTE/android_device_sony_montblanc-common" remote="gh" revision="cm-12.1" />
   <project path="external/bluetooth/bluez" name="android_external_bluetooth_bluez" remote="ste" revision="5.30" />
   <project path="external/bluetooth/glib" name="aosp-bluez.glib" remote="googlecode" revision="master" groups="pdk" />
   <project path="external/bluetooth/sbc" name="bluetooth/sbc" remote="kernel" revision="master" groups="pdk" />
