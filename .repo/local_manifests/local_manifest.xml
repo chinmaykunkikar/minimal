@@ -59,7 +59,7 @@
   <project path="external/bluetooth/glib" name="aosp-bluez.glib" remote="googlecode" revision="master" groups="pdk" />
   <project path="external/bluetooth/sbc" name="bluetooth/sbc" remote="kernel" revision="master" groups="pdk" />
   <project path="external/icu" name="android_external_icu" groups="pdk" remote="df" revision="cm-12.1" />
-  <project path="extra/patches" name="Agontuk/ste_patches" remote="gh" revision="cm-12.1" />
+  <project path="extra/patches" name="ste_patches" remote="df" revision="cm-12.1" />
   <project path="frameworks/av" name="frameworks_av" groups="pdk" remote="df" revision="lp-mr1" />
   <project path="frameworks/base" name="platform_frameworks_base" groups="pdk-cw-fs" remote="df" revision="lp-mr1" />
   <project path="frameworks/native" name="frameworks_native" remote="df" revision="lp-mr1" groups="pdk" />
