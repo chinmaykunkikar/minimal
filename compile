@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ccache
+# CCache
 CCACHEDIR=~/ccache/minos;
 mkdir -p $CCACHEDIR;
 export USE_CCACHE=1;
@@ -22,5 +22,4 @@ read opt;
     esac
 export USE_PREBUILT_CHROMIUM=1;
 export CHANGELOG=true
-make clean && make clobber;
-mka bacon -j8;
+make clean && mka mia && mka bacon -j8;

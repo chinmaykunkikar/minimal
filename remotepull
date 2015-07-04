@@ -56,7 +56,7 @@ sleep 2;
 # Strat the actual sync
 echo -e "${BBlu} \nCurrent directory - $BIONIC ${RCol}";
 cd $BIONIC;
-git pull th HEAD:lp-mr1;
+git pull mo HEAD:lp-mr1;
 
 echo -e "${BBlu} \nCurrent directory - $BUILD ${RCol}";
 cd $BUILD;
@@ -68,7 +68,7 @@ git pull cm HEAD:cm-12.1;
 
 echo -e "${BBlu} \nCurrent directory - $AV ${RCol}";
 cd $AV;
-git pull th HEAD:lp-mr1;
+git pull mo HEAD:lp-mr1;
 
 echo -e "${BBlu} \nCurrent directory - $BASE ${RCol}";
 cd $BASE;
@@ -76,11 +76,11 @@ git pull mo HEAD:lp-mr1;
 
 echo -e "${BBlu} \nCurrent directory - $NATIVE ${RCol}";
 cd $NATIVE;
-git pull th HEAD:lp-mr1;
+git pull mo HEAD:lp-mr1;
 
 echo -e "${BBlu} \nCurrent directory - $SYSTEMCORE ${RCol}";
 cd $SYSTEMCORE;
-git pull th HEAD:lp-mr1;
+git pull mo HEAD:lp-mr1;
 
 echo -e "\n${BPur}Done!${RCol}\n";
 
