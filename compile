@@ -10,7 +10,7 @@ export CCACHE_DIR=$CCACHEDIR;
 # Build
 . build/envsetup.sh;
 export KBUILD_BUILD_USER=darkfalcon;
-export KBUILD_BUILD_HOST=omen;
+export KBUILD_BUILD_HOST=MinimalBuilder;
 echo -e "\n\nLunch menu -\n\n1. user\n2. userdebug\n3. eng"; 
 read opt;
     echo "";
@@ -22,5 +22,4 @@ read opt;
     esac
 export USE_PREBUILT_CHROMIUM=1;
 export CHANGELOG=true
-make clean && make clobber;
-mka bacon -j8;
+make clean && mka mia && mka bacon -j8;

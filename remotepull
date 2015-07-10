@@ -18,6 +18,7 @@ BASE="$FRAMEWORKS/base";
 BIONIC="$MINIMAL/bionic";
 BUILD="$MINIMAL/build";
 EXTERNALICU="$MINIMAL/external/icu";
+LIBHARDWARE="$MINIMAL/hardware/libhardware";
 NATIVE="$FRAMEWORKS/native";
 SYSTEMCORE="$MINIMAL/system/core";
 
@@ -41,22 +42,21 @@ else
 fi
 
 # Introduction
-echo -e "${BPur}Hello, lets start syncing upstream!\n${RCol}";
 
-array=( "$BIONIC" "$BUILD" "$EXTERNALICU" "$AV" "$BASE" "$NATIVE" "$SYSTEMCORE")
+array=( "$BIONIC" "$BUILD" "$EXTERNALICU" "$AV" "$BASE" "$LIBHARDWARE" "$NATIVE" "$SYSTEMCORE")
 for i in ${array[@]}
 do
     echo $i
 done
 
-echo -e "${BYel}\nNumber of repository directories ready for syncing:${RCol}" ${#array[@]}
+echo -e "${BYel}\n\nNumber of repository directories ready for syncing:${RCol}" ${#array[@]}
 
 sleep 2;
 
 # Strat the actual sync
 echo -e "${BBlu} \nCurrent directory - $BIONIC ${RCol}";
 cd $BIONIC;
-git pull th HEAD:lp-mr1;
+git pull mo HEAD:lp-mr1;
 
 echo -e "${BBlu} \nCurrent directory - $BUILD ${RCol}";
 cd $BUILD;
@@ -64,23 +64,27 @@ git pull mo HEAD:lp-mr1;
 
 echo -e "${BBlu} \nCurrent directory - $EXTERNALICU ${RCol}";
 cd $EXTERNALICU;
-git pull cm HEAD:cm-12.1;
+git pull cm HEAD:lp-mr1;
 
 echo -e "${BBlu} \nCurrent directory - $AV ${RCol}";
 cd $AV;
-git pull th HEAD:lp-mr1;
+git pull mo HEAD:lp-mr1;
 
 echo -e "${BBlu} \nCurrent directory - $BASE ${RCol}";
 cd $BASE;
 git pull mo HEAD:lp-mr1;
 
+echo -e "${BBlu} \nCurrent directory - $LIBHARDWARE ${RCol}";
+cd $LIBHARDWARE;
+git pull ste HEAD:lp-mr1;
+
 echo -e "${BBlu} \nCurrent directory - $NATIVE ${RCol}";
 cd $NATIVE;
-git pull th HEAD:lp-mr1;
+git pull mo HEAD:lp-mr1;
 
 echo -e "${BBlu} \nCurrent directory - $SYSTEMCORE ${RCol}";
 cd $SYSTEMCORE;
-git pull th HEAD:lp-mr1;
+git pull mo HEAD:lp-mr1;
 
 echo -e "\n${BPur}Done!${RCol}\n";
 
