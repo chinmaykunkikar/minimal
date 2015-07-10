@@ -29,4 +29,4 @@ rm "$MINIMAL/.repo/local_manifests/local_manifest.xml" && cp "local_manifest.xml
 
 echo "Done!";
 
-exit 
+exit

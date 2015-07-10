@@ -54,20 +54,14 @@
   <project path="bionic" name="android_bionic" remote="df" revision="lp-mr1" />
   <project path="bootable/recovery" name="android_bootable_recovery" remote="ste" revision="cm-12.1" />
   <project path="device/sony/pepper" name="android_device_sony_pepper" remote="mo" revision="lp-mr1" />
-<<<<<<< HEAD
   <project path="device/sony/montblanc-common" name="android_device_sony_montblanc-common" remote="ste" revision="cm-12.1" />
-=======
   <project path="device/sony/montblanc-common" name="XperiaSTE/android_device_sony_montblanc-common" remote="gh" revision="cm-12.1" />
->>>>>>> b76c13f0d177e1e5ae0e1fdfbdeb54cd53d30d63
   <project path="external/bluetooth/bluez" name="android_external_bluetooth_bluez" remote="ste" revision="5.31" />
   <project path="external/bluetooth/glib" name="aosp-bluez.glib" remote="googlecode" revision="master" groups="pdk" />
   <project path="external/bluetooth/sbc" name="bluetooth/sbc" remote="kernel" revision="master" groups="pdk" />
   <project path="external/icu" name="android_external_icu" groups="pdk" remote="df" revision="lp-mr1" />
-<<<<<<< HEAD
   <project path="extra/patches" name="Agontuk/ste_patches" remote="gh" revision="cm-12.1" />
-=======
   <project path="extra/patches" name="ste_patches" remote="df" revision="cm-12.1" />
->>>>>>> b76c13f0d177e1e5ae0e1fdfbdeb54cd53d30d63
   <project path="frameworks/av" name="frameworks_av" groups="pdk" remote="df" revision="lp-mr1" />
   <project path="frameworks/base" name="platform_frameworks_base" groups="pdk-cw-fs" remote="df" revision="lp-mr1" />
   <project path="frameworks/native" name="frameworks_native" remote="df" revision="lp-mr1" groups="pdk" />
