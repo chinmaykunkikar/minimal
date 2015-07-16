@@ -1,25 +1,26 @@
 #!/bin/bash
 
 # CCache
-CCACHEDIR=~/.ccache/minimal;
+CCACHEDIR=~/.ccache1/minimal;
 mkdir -p $CCACHEDIR;
 export USE_CCACHE=1;
-export CCACHE_NLEVELS=4;
+export CCACHE_NLEVELS=5;
 export CCACHE_DIR=$CCACHEDIR;
 
 # Build
 . build/envsetup.sh;
 export KBUILD_BUILD_USER=darkfalcon;
 export KBUILD_BUILD_HOST=MinimalBuilder;
-echo -e "\n\nLunch menu -\n\n1. user\n2. userdebug\n3. eng"; 
-read opt;
-    echo "";
-    case $opt in
-        1 ) lunch minimal_pepper-user;;
-        2 ) lunch minimal_pepper-userdebug;;
-        3 ) lunch minimal_pepper-eng;;
-        * ) echo "Please pick only one of these three lunch combos!" && exit;;
-    esac
+lunch minimal_pepper-userdebug
+#echo -e "\n\nLunch menu -\n\n1. user\n2. userdebug\n3. eng"; 
+#read opt;
+#    echo "";
+#    case $opt in
+#        1 ) lunch minimal_pepper-user;;
+#        2 ) lunch minimal_pepper-userdebug;;
+#        3 ) lunch minimal_pepper-eng;;
+#        * ) echo "Please pick only one of these three lunch combos!" && exit;;
+#    esac
 export USE_PREBUILT_CHROMIUM=1;
 export CHANGELOG=true
-make clean && mka mia && mka bacon -j8;
+mka mia && mka bacon -j8;
