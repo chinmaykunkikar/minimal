@@ -23,4 +23,24 @@ lunch minimal_pepper-userdebug
 #    esac
 export USE_PREBUILT_CHROMIUM=1;
 export CHANGELOG=true
+
+#Optimizations
+echo -e "\n\n1. Enable Optimizations\n2. Don't enable optimizations"; 
+read opz;
+    echo "";
+    case $opz in
+        1 ) export USE_O3_OPTIMIZATIONS=true
+            export FLOOP_NEST_OPTIMIZE=true
+            export FFAST_MATH=true
+            export STRICT_ALIASING=true
+            export ENABLE_GCCONLY=true
+            export GRAPHITE_OPTS=true
+            export USE_HOST_4_8=true
+            ;;
+        2 ) echo "Optimizations not enabled." && break
+            ;;
+        * ) echo "Please pick only one of these three lunch combos!" && exit
+            ;;
+    esac
+
 mka mia && mka bacon -j8;
