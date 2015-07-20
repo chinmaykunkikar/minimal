@@ -1,46 +1,25 @@
 #!/bin/bash
 
 # CCache
-CCACHEDIR=~/.ccache1/minimal;
+CCACHEDIR=~/.ccache/minimal;
 mkdir -p $CCACHEDIR;
 export USE_CCACHE=1;
-export CCACHE_NLEVELS=5;
+export CCACHE_NLEVELS=4;
 export CCACHE_DIR=$CCACHEDIR;
 
 # Build
 . build/envsetup.sh;
 export KBUILD_BUILD_USER=darkfalcon;
 export KBUILD_BUILD_HOST=MinimalBuilder;
-lunch minimal_pepper-userdebug
-#echo -e "\n\nLunch menu -\n\n1. user\n2. userdebug\n3. eng"; 
-#read opt;
-#    echo "";
-#    case $opt in
-#        1 ) lunch minimal_pepper-user;;
-#        2 ) lunch minimal_pepper-userdebug;;
-#        3 ) lunch minimal_pepper-eng;;
-#        * ) echo "Please pick only one of these three lunch combos!" && exit;;
-#    esac
-export USE_PREBUILT_CHROMIUM=1;
-export CHANGELOG=true
+#export ENABLE_GCCONLY=true;
+#export SUPPRES_UNUSED_WARNING=true;
+#export GRAPHITE_OPTS=true;
+#export KRAIT_TUNINGS=true;
+#export FFAST_MATH=true;
+#export FLOOP_NEST_OPTIMIZE=true;
 
-#Optimizations
-echo -e "\n\n1. Enable Optimizations\n2. Don't enable optimizations"; 
-read opz;
-    echo "";
-    case $opz in
-        1 ) export USE_O3_OPTIMIZATIONS=true
-            export FLOOP_NEST_OPTIMIZE=true
-            export FFAST_MATH=true
-            export STRICT_ALIASING=true
-            export ENABLE_GCCONLY=true
-            export GRAPHITE_OPTS=true
-            export USE_HOST_4_8=true
-            ;;
-        2 ) echo "Optimizations not enabled." && break
-            ;;
-        * ) echo "Please pick only one of these three lunch combos!" && exit
-            ;;
-    esac
+lunch minimal_pepper-userdebug;
+export USE_PREBUILT_CHROMIUM=1;
+export CHANGELOG=true;
 
 mka mia && mka bacon -j8;

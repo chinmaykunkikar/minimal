@@ -17,15 +17,28 @@ fi
 
 #Copy files to respective directories 
 
-cp "clean" "$MINIMAL";
 cp "compile" "$MINIMAL";
-cp "patch.sh" "$MINIMAL";
 cp "remotepull" "$MINIMAL";
 cp "reset" "$MINIMAL";
-cp "testbuild" "$MINIMAL";
 
-cd $LMANIFESTS;
-rm "$MINIMAL/.repo/local_manifests/local_manifest.xml" && cp "local_manifest.xml" "$MINIMAL/.repo/local_manifests/";
+echo -e "Copy local manifests? (includes roomservice.xml) [Y/N]"; 
+read cop;
+    echo "";
+    case $cop in
+        y|Y )
+            cd $LMANIFESTS;
+            rm "$MINIMAL/.repo/local_manifests/local_manifest.xml";
+            rm "$MINIMAL/.repo/local_manifests/roomservice.xml";
+            cp "local_manifest.xml" "$MINIMAL/.repo/local_manifests/";
+            cp "roomservice.xml" "$MINIMAL/.repo/local_manifests/";
+            ;;
+        n|N )
+            echo "Local manifests not copied." && break
+            ;;
+        * )
+            echo "Please answer in Yes or No." && exit
+            ;;
+    esac
 
 echo "Done!";
 
