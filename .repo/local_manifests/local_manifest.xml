@@ -16,16 +16,23 @@
   <remote name="ste" 
 		fetch="https://github.com/XperiaSTE/" />
 
-  <!-- <remove-project name="android_external_bluetooth_bluedroid" />
+  <remove-project name="android_bionic" />
+  <remove-project name="platform_bootable_recovery" />
+  <remove-project name="android_external_bluetooth_bluedroid" />
+  <remove-project name="android_device_qcom_common" />
   <remove-project name="android_external_icu" />
+  <remove-project name="android_frameworks_av" />
+  <remove-project name="android_frameworks_base" />
+  <remove-project name="android_frameworks_native" />
   <remove-project name="android_hardware_libhardware_legacy" />
-  <remove-project name="android_packages_apps_Bluetooth" /> -->
+  <remove-project name="android_hardware_libhardware" />
+  <remove-project name="android_packages_apps_Bluetooth" />
+  <remove-project name="android_system_core" />
   <remove-project name="platform/prebuilts/clang/darwin-x86/3.1" />
   <remove-project name="platform/prebuilts/clang/darwin-x86/3.2" />
   <remove-project name="platform/prebuilts/clang/darwin-x86/arm/3.3" />
   <remove-project name="platform/prebuilts/clang/darwin-x86/host/3.4" />
   <remove-project name="platform/prebuilts/clang/darwin-x86/host/3.5" />
-  <remove-project name="platform/prebuilts/clang/darwin-x86/mips/3.3" />
   <remove-project name="platform/prebuilts/clang/darwin-x86/x86/3.3" />
   <remove-project name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.8" />
   <remove-project name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" />
@@ -33,32 +40,26 @@
   <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.8" />
   <remove-project name="platform/prebuilts/gcc/darwin-x86/host/headers" />
   <remove-project name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" />
-  <remove-project name="platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9" />
-  <remove-project name="platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.8" />
-  <remove-project name="platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.8" />
-  <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.8" />
   <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
   <remove-project name="platform/prebuilts/python/darwin-x86/2.7.5" />
-  
-  <project path="device/sony/pepper" name="android_device_sony_pepper" remote="mo" revision="lp-mr1" />
-  <project path="extra/patches" name="Agontuk/ste_patches" remote="gh" revision="cm-12.1" />
-  <!-- <project path="bionic" name="android_bionic" remote="df" revision="lp-mr1" />
+
+  <project path="bionic" name="android_bionic" remote="mo" revision="ste" />
   <project path="bootable/recovery" name="android_bootable_recovery" remote="ste" revision="cm-12.1" />
+  <project path="device/sony/pepper" name="android_device_sony_pepper" remote="mo" revision="lp-mr1" />
   <project path="device/sony/montblanc-common" name="android_device_sony_montblanc-common" remote="df" revision="lp-mr1" />
   <project path="external/bluetooth/bluez" name="android_external_bluetooth_bluez" remote="ste" revision="5.32" />
   <project path="external/bluetooth/glib" name="aosp-bluez.glib" remote="googlecode" revision="master" groups="pdk" />
   <project path="external/bluetooth/sbc" name="bluetooth/sbc" remote="kernel" revision="master" groups="pdk" />
   <project path="external/icu" name="android_external_icu" groups="pdk" remote="ste" revision="cm-12.1" />
-  <project path="frameworks/av" name="frameworks_av" groups="pdk" remote="df" revision="lp-mr1" />
-  <project path="frameworks/base" name="platform_frameworks_base" groups="pdk-cw-fs" remote="df" revision="lp-mr1" />
-  <project path="frameworks/native" name="frameworks_native" remote="df" revision="lp-mr1" groups="pdk" />
+  <project path="extra/patches" name="Agontuk/ste_patches" remote="gh" revision="cm-12.1" />
+  <project path="frameworks/av" name="android_frameworks_av" groups="pdk" remote="mo" revision="ste" />
+  <project path="frameworks/base" name="android_frameworks_base" groups="pdk-cw-fs" remote="mo" revision="ste" />
+  <project path="frameworks/native" name="android_frameworks_native" remote="mo" revision="ste" groups="pdk" />
   <project path="hardware/libhardware_legacy" name="android_hardware_libhardware_legacy" remote="ste" revision="cm-12.1" />
   <project path="hardware/libhardware" name="android_hardware_libhardware" remote="df" revision="lp-mr1" />
   <project path="hardware/ste-sony" name="android_hardware_ste-sony" remote="ste" revision="cm-12.1" />
   <project path="packages/apps/Bluetooth" name="android_packages_apps_Bluetooth" remote="ste" revision="cm-12.1" />
-  <project name="android_kernel_sony_u8500" path="kernel/sony/u8500" remote="df" revision="lp-mr1" />
-  <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" />
-  <project path="packages/apps/Gallery2" name="android_packages_apps_Gallery2" remote="th" revision="lp-mr1" />
-  <project path="system/core" name="android_system_core" remote="df" revision="lp-mr1" groups="pdk" /> -->
+  <project name="android_kernel_sony_u8500" path="kernel/sony/u8500" remote="ste" revision="cm-12.1" />
+  <project path="system/core" name="android_system_core" remote="mo" revision="ste" groups="pdk" />
 
 </manifest>
