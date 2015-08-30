@@ -7,10 +7,23 @@ export USE_CCACHE=1;
 export CCACHE_NLEVELS=4;
 export CCACHE_DIR=$CCACHEDIR;
 
+# Ask whether to do a repo sync before building
+echo -e "Perform repo sync before building? [Y for 'Yes']"; 
+read rep;
+    echo "";
+    case $rep in
+        y|Y )
+            repo sync -j8
+            ;;
+        * )
+            break
+            ;;
+    esac
+
 # Build
 . build/envsetup.sh;
 export KBUILD_BUILD_USER=darkfalcon;
-export KBUILD_BUILD_HOST=MinimalBuilder;
+export KBUILD_BUILD_HOST=ArchBox;
 #export ENABLE_GCCONLY=true;
 #export SUPPRES_UNUSED_WARNING=true;
 #export GRAPHITE_OPTS=true;
@@ -18,8 +31,22 @@ export KBUILD_BUILD_HOST=MinimalBuilder;
 #export FFAST_MATH=true;
 #export FLOOP_NEST_OPTIMIZE=true;
 
-lunch minimal_pepper-userdebug;
-export USE_PREBUILT_CHROMIUM=1;
+lunch minimal_osprey-userdebug;
+export USE_PREBUILT_CHROMIUM=true;
 export CHANGELOG=true;
 
-mka mia && mka bacon -j8;
+# Ask whether to make a clean build or a dirty one
+echo -e "Perform a clean build? [Y/N]"; 
+read mka;
+    echo "";
+    case $mka in
+        y|Y )
+            mka clean && mka bacon;
+            ;;
+        n|N )
+            mka bacon; break
+            ;;
+        * )
+            echo "Please answer in Yes or No." && exit
+            ;;
+    esac

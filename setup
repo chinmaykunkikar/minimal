@@ -1,13 +1,10 @@
 #!bin/bash
 
 #Makes life easier
-
 MINIMAL="/home/darkfalcon/minimal";
 LMANIFESTS="$PWD/.repo/local_manifests";
-VPRODUCT="$PWD/vendor/minimal/products";
 
 #Quick check if the source directory exists
-
 if [ ! -d "$MINIMAL" ]; then
   echo "No valid working directory found. Exiting...";
   exit;
@@ -16,9 +13,7 @@ else
 fi
 
 #Copy files to respective directories 
-
 cp "compile" "$MINIMAL";
-cp "remotepull" "$MINIMAL";
 cp "reset" "$MINIMAL";
 
 echo -e "Copy local manifests? (includes roomservice.xml) [Y/N]"; 
@@ -28,9 +23,7 @@ read cop;
         y|Y )
             cd $LMANIFESTS;
             rm "$MINIMAL/.repo/local_manifests/local_manifest.xml";
-            rm "$MINIMAL/.repo/local_manifests/roomservice.xml";
             cp "local_manifest.xml" "$MINIMAL/.repo/local_manifests/";
-            cp "roomservice.xml" "$MINIMAL/.repo/local_manifests/";
             ;;
         n|N )
             echo "Local manifests not copied." && break
