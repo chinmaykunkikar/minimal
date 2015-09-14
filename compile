@@ -16,7 +16,6 @@ read rep;
             repo sync -j8
             ;;
         * )
-            break
             ;;
     esac
 
@@ -44,7 +43,7 @@ read mka;
             mka clean && mka bacon;
             ;;
         n|N )
-            mka bacon; break
+            mka bacon;
             ;;
         * )
             echo "Please answer in Yes or No." && exit
