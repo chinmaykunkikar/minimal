@@ -7,12 +7,22 @@
 case $1 in
   -h|--help )
       echo -e "Minimal OS build script"
-      echo -e "Usage:\n     ./build.sh PRODUCT_NAME JOBS"
+      echo -e "Usage:\n     ./build.sh [PRODUCT_NAME] [-sc] [JOBS]"
       echo -e "PRODUCT_NAME   -   Product you're currently building for"
+      echo -e "[sc]           -   Specify the mode. -s is for repo sync and -c is for clean build."
+      echo -e "                   Using -sc whill perform a repo sync as well as a clean build."
       echo -e "JOBS           -   Number of CPU jobs/threads you want the build to utilize"
       echo -e "-h | --help    -   Show this help and exit"
       exit
 esac
+
+
+# Define everything here
+PRODUCT_NAME="$1"
+MODE="$2"
+JOBS="$3"
+HOST=$(echo $HOSTNAME)
+USER=$(whoami)
 
 
 #Sanity checks
@@ -22,14 +32,14 @@ then
   exit
 fi
 
-if [ !"$1" ]
+if [ !"$PRODUCT_NAME" ]
 then
   echo -e "No product name supplied."
   echo -e "Please enter ./build.sh $PRODUCT_NAME to run script. \nEnter ./build.sh --help for usage and more options"
   exit
 fi
 
-if [ !"$2" ]
+if [ !"$JOBS" ]
 then
   echo -e "Warning: Number of jobs not provided"
   echo -e "The script will run further tasks using default jobs"
@@ -37,24 +47,14 @@ then
 fi
 
 
-# Define everything here
-PRODUCT_NAME="$1"
-JOBS="$2"
-HOST=$(echo $HOSTNAME)
-USER=$(whoami)
-
-
-# Ask whether to do repo sync
-echo -e "Perform a repo sync before froceeding to build? [Default=Yes]"
-read -n 1 sync
-case $sync in
-   Y|y|"" )
-      repo sync $JOBS"
-      ;;
-  *)
-      echo -e "Proceeding without repo syncing..."
-      ;;
-esac
+# repo sync
+if [ $MODE == "-s" ] || [ $MODE == "-sc" ]
+then
+      echo -e "Repo syncing..."
+      repo sync "$JOBS"
+  else
+      echo -e "Proceeding without repo syncing..." 
+fi
 
 
 # Show the USER and HOST to user
@@ -69,22 +69,17 @@ export KBUILD_BUILD_HOST="$HOST"
 lunch minimal_"$PRODUCT_NAME"-userdebug
 export USE_PREBUILT_CHROMIUM=true;
 export CHANGELOG=true
+rm $OUT/system/build.prop;
 echo -e "Environment set up."
 
 
-# Ask if to make a clean build
+# Clean build
 echo -e "Perform a clean build? [Default=No]"
 read -n 1 make
-echo -e "\n\nBuild Started!\n\n"
-case $make in
-   Y|y )
-      mka clean && mka bacon "$JOBS"
-      ;;
-   N|n|"" )
+echo -e "\n\nStarting build for $PRODUCT_NAME\n\n"
+if [ $MODE == "-c" ] || [ $MODE == "-sc" ]; then
+       echo -e "Cleaning up out folder..."
+       mka clean && mka bacon "$JOBS"
+    else
       mka bacon "$JOBS"
-      ;;
-   * )
-      echo -e "Please answer in Yes or No"
-      exit;
-      ;;
-esac
+fi
