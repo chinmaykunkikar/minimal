@@ -72,10 +72,22 @@ export CHANGELOG=true
 rm $OUT/system/build.prop;
 echo -e "Environment set up."
 
+# Release build
+echo -e "Is this a release build? [Default=No]"
+read -n 1 release
+case $release in
+   Y|y )
+      export MINIMAL_RELEASE=true
+      ;;
+   N|n|"" )
+      unset MINIMAL_RELEASE
+      ;;
+   * )
+      unset MINIMAL_RELEASE
+      ;;
+esac
 
 # Clean build
-echo -e "Perform a clean build? [Default=No]"
-read -n 1 make
 echo -e "\n\nStarting build for $PRODUCT_NAME\n\n"
 if [ $MODE == "-c" ] || [ $MODE == "-sc" ]; then
        echo -e "Cleaning up out folder..."
