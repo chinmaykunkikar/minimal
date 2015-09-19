@@ -46,6 +46,26 @@ then
   echo -e "Enter ./build.sh --help for usage and more options"
 fi
 
+# Optimizations
+optimizations() {
+  flags=( 'echo "Proceeding without using optimizaions"' 'export USE_O3_OPTIMIZATIONS=true' 'export FLOOP_NEST_OPTIMIZE=true' 'export FFAST_MATH=true' 'export STRICT_ALIASING=true' 'export KRAIT_TUNINGS=true' 'export ENABLE_GCCONLY=true' 'export GRAPHITE_OPTS=true' 'export USE_HOST_4_8=true' 'export SUPPRES_UNUSED_WARNING=true' )
+  echo -e "Select optimizations:"
+  echo -e "1. USE_O3_OPTIMIZATIONS"
+  echo -e "2. FLOOP_NEST_OPTIMIZE"
+  echo -e "3. FFAST_MATH"
+  echo -e "4. STRICT_ALIASING"
+  echo -e "5. KRAIT_TUNINGS"
+  echo -e "6. ENABLE_GCCONLY"
+  echo -e "7. GRAPHITE_OPTS"
+  echo -e "8. USE_HOST_4_8"
+  echo -e "9. SUPPRES_UNUSED_WARNING"
+  echo -e "0. None"
+  read -e options
+  for index in $options
+  do
+        ${flags[index]}
+  done
+}
 
 # repo sync
 if [ $MODE == "-s" ] || [ $MODE == "-sc" ]
@@ -64,9 +84,10 @@ echo -e "\nYour user is $USER and host is $HOST\n"
 # Start the actual build
 echo -e "Setting up the environment..."
 sleep 3
+lunch minimal_"$PRODUCT_NAME"-userdebug
+optimiztions()
 export KBUILD_BUILD_USER="$USER"
 export KBUILD_BUILD_HOST="$HOST"
-lunch minimal_"$PRODUCT_NAME"-userdebug
 export USE_PREBUILT_CHROMIUM=true;
 export CHANGELOG=true
 rm $OUT/system/build.prop;
