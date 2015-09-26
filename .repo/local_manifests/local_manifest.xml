@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
+  <remove-project name="platform/hardware/intel/audio_media" />
+  <remove-project name="platform/hardware/intel/bootstub" />
+  <remove-project name="platform/hardware/intel/common/bd_prov" />
+  <remove-project name="platform/hardware/intel/common/libmix" />
+  <remove-project name="platform/hardware/intel/common/libstagefrighthw" />
+  <remove-project name="platform/hardware/intel/common/libva" />
+  <remove-project name="platform/hardware/intel/common/libwsbm" />
+  <remove-project name="platform/hardware/intel/common/omx-components" />
+  <remove-project name="platform/hardware/intel/common/utils" />
+  <remove-project name="platform/hardware/intel/common/wrs_omxil_core" />
+  <remove-project name="platform/hardware/intel/img/hwcomposer" />
+  <remove-project name="platform/hardware/intel/img/libdrm" />
+  <remove-project name="platform/hardware/intel/img/psb_headers" />
+  <remove-project name="platform/hardware/intel/img/psb_video" />
+  <remove-project name="platform/hardware/samsung_slsi/exynos5" />
+  <remove-project name="platform/hardware/ti/omap3" />
+  <remove-project name="platform/hardware/ti/omap4-aah" />
+  <remove-project name="platform/hardware/ti/omap4xxx" />
+  <remove-project name="platform/hardware/nvidia/tegra124" />
+  <remove-project name="platform/hardware/nvidia/audio" />
   <remove-project name="platform/prebuilts/clang/darwin-x86/3.1" />
   <remove-project name="platform/prebuilts/clang/darwin-x86/3.2" />
   <remove-project name="platform/prebuilts/clang/darwin-x86/arm/3.3" />
@@ -16,9 +36,11 @@
   <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
   <remove-project name="platform/prebuilts/python/darwin-x86/2.7.5" />
 
-  <project name="MotoG3/android_device_motorola_osprey" path="device/motorola/osprey" remote="gh" revision="cm-12.1" />
-  <project name="MotoG3/android_vendor_motorola_osprey" path="vendor/motorola/osprey" remote="gh" revision="cm-12.1" />
-  <project name="MotoG3/android_kernel_motorola_msm8916" path="kernel/motorola/msm8916" remote="gh" revision="cm-12.1" />
-  <project name="android_external_mm-dash" path="external/mm-dash" remote="cm" revision="cm-12.1" />
+  <project name="dark-falcon/android_device_motorola_osprey" path="device/motorola/osprey" remote="gh" revision="lp-mr1" />
+  <!-- <project name="dark-falcon/android_packages_apps_SetupWizard" path="packages/apps/SetupWizard" remote="gh" revision="cm-12.1" />
   <project name="android_hardware_qcom_fm" path="hardware/qcom/fm" remote="cm" revision="cm-12.1" />
+  <project name="MotoG3/android_vendor_motorola_osprey" path="vendor/motorola/osprey" remote="gh" revision="cm-12.1" />
+  <project name="android_kernel_motorola_msm8916" path="kernel/motorola/msm8916" remote="cm" revision="cm-12.1" />
+  <project name="android_external_mm-dash" path="external/mm-dash" remote="cm" revision="cm-12.1" /> -->
+  
 </manifest>
