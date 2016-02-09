@@ -21,7 +21,7 @@ function cherry-pick() {
 }
 
 cd $KERNELSRC
-git revert $TIMECONSTBCCOMMIT
+git revert --no-edit $TIMECONSTBCCOMMIT
 if [ $(git remote | grep minimal) == "minimal" ]
 then
   cherry-pick
