@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+<remove-project name="device_qcom_common" />
+<remove-project name="hardware_qcom_display" />
+<remove-project name="hardware_qcom_audio" />
+<remove-project name="hardware_qcom_media" />
+
+<project name="CyanogenMod/android_external_bson" path="external/bson" remote="github" revision="cm-13.0" />
+<project name="CyanogenMod/android_external_stlport" path="external/stlport" remote="github" revision="cm-13.0" />
+<project name="CyanogenMod/android_vendor_qcom_opensource_dataservices" path="vendor/qcom/opensource/dataservices" remote="github" revision="cm-13.0" />
+<project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="github" revision="cm-13.0" />
+<project name="CyanogenMod/android_hardware_qcom_audio" path="hardware/qcom/audio-caf/msm8916" remote="github" revision="cm-13.0-caf-8916" />
+<project name="CyanogenMod/android_hardware_qcom_display" path="hardware/qcom/display-caf/msm8916" remote="github" revision="cm-13.0-caf-8916" />
+<project name="CyanogenMod/android_hardware_qcom_media" path="hardware/qcom/media-caf/msm8916" remote="github" revision="cm-13.0-caf-8916" />
+<project name="android_device_motorola_osprey" path="device/motorola/osprey" remote="mo" />
+<project name="dark-falcon/android_device_motorola_msm8916-common" path="device/motorola/msm8916-common" remote="github" revision="mr1" />
+<project name="moto8916/android_kernel_motorola_msm8916" path="kernel/motorola/msm8916" remote="github" revision="cm-13.0" />
+<project name="moto8916/proprietary_vendor_motorola" path="vendor/motorola" remote="github" revision="cm-13.0_msm8916" />
+</manifest>
